@@ -21,16 +21,16 @@ int nbOfEntries = 1440;
 //Parameters for the input conversion
 float defaultSdDev = 3; // 6 percents of Rum as default
 float computedSdDev = .5f;
-float rumSdDevMultiplier = .02f; // Convert the standard deviation into a percentage of Rum
+float rumSdDevMultiplier = .1f; // Convert the standard deviation into a percentage of Rum
 
 //Parameters for the pouring
 int liqVol = 180; //Amount of liquid we want to pour in the glass in Milliliters
-float rumFlow = 2; //in ml / sec
-float cokeFlow = 2; // in ml / sec
+float rumFlow = 10; //in ml / sec
+float cokeFlow = 10; // in ml / sec
 
 //Variables controlling the number of reps
 DateTime lastDate = DateTime(2000, 1, 21, 3, 0, 0);
-boolean onlyOnePerDay = true;
+boolean onlyOnePerDay = false;
 boolean doneforTheDay = false;
 
 //Pins used
@@ -77,7 +77,7 @@ void loop () {
     else{
       Serial.println("Switch OFF!!");
       delay (2000);
-      //return;
+      return;
     }
 
     //Check if Card is here
