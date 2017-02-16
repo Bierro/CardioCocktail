@@ -7,11 +7,11 @@ This work has been done individually, over the course of a week.
 
 ## Current state
 
-<img src="http://i.imgur.com/SqRst9F.jpg" width="500">
+<img src="http://i.imgur.com/SqRst9F.jpg" width="500" align="middle">
 
 [![CardioCocktail](http://i.imgur.com/Oey9nLW.jpg)](https://vimeo.com/204309175 "CardioCocktail - Click to Watch!")
 
-<img src="https://raw.githubusercontent.com/Bierro/CardioCocktail/master/Process%20Pics/Process3.gif" width="500">
+<img src="https://raw.githubusercontent.com/Bierro/CardioCocktail/master/Process%20Pics/Process3.gif" width="500" align="middle">
 
 ## About
 
