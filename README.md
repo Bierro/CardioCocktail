@@ -13,6 +13,7 @@ This work has been done individually, over the course of a week.
 
 ![Process GIF](http://i.imgur.com/qDmzpuv.gif)
 
+
 ## About
 
 ### Idea
