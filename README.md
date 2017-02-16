@@ -11,7 +11,7 @@ This work has been done individually, over the course of a week.
 
 [![CardioCocktail](http://i.imgur.com/Oey9nLW.jpg)](https://vimeo.com/204309175 "CardioCocktail - Click to Watch!")
 
-![Process GIF](http://i.imgur.com/qDmzpuv.gif)
+![Process GIF](https://raw.githubusercontent.com/Bierro/CardioCocktail/master/Process%20Pics/Process3.gif)
 
 
 ## About
