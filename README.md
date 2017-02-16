@@ -1,19 +1,17 @@
 # CardioCocktail
 For the CMU graduate class ["Making Things Interactive"](https://courses.ideate.cmu.edu/48-739/s2017/?p=108) of Spring 2017, I created a cocktail dispenser where the amount of stress you got during the day determines the amount of alcohol you will get in your cocktail. Forget today and get a drink!
 
-This repository documents the project. It contains the Arduino code I wrote, the images and videos documenting my work, and a description of the project in this very ReadMe file.
+This repository documents the project. It contains the Arduino code I wrote, the images and videos documenting my work, and a description of the project in this very README file.
+
+This work has been done individually, over the course of a week.
 
 ## Current state
 
 ![Output](http://i.imgur.com/SqRst9F.jpg =10x)
 
-[![CardioCocktail](http://imgur.com/Oey9nLW)](https://vimeo.com/204309175 "CardioCocktail - Click to Watch!")
+[![CardioCocktail](http://i.imgur.com/Oey9nLW.jpg)](https://vimeo.com/204309175 "CardioCocktail - Click to Watch!")
 
-I thought
-
- I created a cocktail dispenser that mapped the amount of alcohol which was poured to the standard deviation of the heartbeat of the person during the day.
-
-This work has been done individually, over the course of 2 weeks.
+![Process GIF](http://i.imgur.com/qDmzpuv.gif)
 
 ## About
 
