@@ -1,5 +1,5 @@
 # CardioCocktail
-For the CMU graduate class ["Making Things Interactive"](https://courses.ideate.cmu.edu/48-739/s2017/) of Spring 2017, I created a cocktail dispenser where the amount of stress you got during the day determines the amount of alcohol you will get in your cocktail. Forget today and get a drink!
+For the CMU graduate class ["Making Things Interactive"](https://courses.ideate.cmu.edu/48-739/s2017/?p=108) of Spring 2017, I created a cocktail dispenser where the amount of stress you got during the day determines the amount of alcohol you will get in your cocktail. Forget today and get a drink!
 
 This repository documents the project. It contains the Arduino code I wrote, the images and videos documenting my work, and a description of the project in this very ReadMe file.
 
@@ -7,6 +7,7 @@ This repository documents the project. It contains the Arduino code I wrote, the
 
 ![Output](http://i.imgur.com/SqRst9F.jpg =10x)
 
+[![CardioCocktail](http://imgur.com/Oey9nLW)](https://vimeo.com/204309175 "CardioCocktail - Click to Watch!")
 
 I thought
 
