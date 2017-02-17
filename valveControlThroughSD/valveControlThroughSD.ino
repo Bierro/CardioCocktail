@@ -19,8 +19,7 @@ char* targetFileUrl = "lastdata.txt";
 int nbOfEntries = 1440;
 
 //Parameters for the input conversion
-float defaultSdDev = 3; // 6 percents of Rum as default
-float computedSdDev = .5f;
+float defaultSdDev = 3; // Default Standard deviation so that we get 30 percents of Rum as default
 float rumSdDevMultiplier = .1f; // Convert the standard deviation into a percentage of Rum
 
 //Parameters for the pouring
@@ -29,9 +28,8 @@ float rumFlow = 10; //in ml / sec
 float cokeFlow = 10; // in ml / sec
 
 //Variables controlling the number of reps
-DateTime lastDate = DateTime(2000, 1, 21, 3, 0, 0);
-boolean onlyOnePerDay = false;
-boolean doneforTheDay = false;
+DateTime lastDate = DateTime(2000, 1, 21, 3, 0, 0); // Last time we poured a drink
+boolean onlyOnePerDay = false; //Do we only want to allow one drink per day?
 
 //Pins used
 int switchPin = 2;
@@ -52,16 +50,22 @@ void setup () {
     while (1);
   }
 
-  // put your setup code here, to run once:
   pinMode(switchPin, INPUT);
   pinMode(rumValvePin, OUTPUT);
   pinMode(cokeValvePin, OUTPUT);
 }
 
 void loop () {
+    //Did the user turn the switch back OFF?
+    boolean wasSwitchOff= true;
+  
+    // Create the variable where we will store the standard deviation
+    float computedSdDev = defaultSdDev;
+
+    //The time right now
     DateTime now = rtc.now();
 
-    //If we only want one drink per day and we already poured, wait for the next day!
+    //If we only want one drink per day and we already poured it, wait for the next day!
     if (onlyOnePerDay){
       if (lastDate.year() != 2000 && lastDate.year() == now.year() && lastDate.month() == now.month() && lastDate.day() == now.day()) {
         Serial.println("You already poured yourself a glass today!");
@@ -70,12 +74,13 @@ void loop () {
       }
     }
 
-    //Check it the switch is on
-    if (digitalRead(switchPin) == LOW) {
+    //Check it the switch was just turned ON
+    if (digitalRead(switchPin) == LOW && wasSwitchOff) {
      Serial.println("Switch ON!!");
     }
     else{
       Serial.println("Switch OFF!!");
+      wasSwitchOff = true;
       delay (2000);
       return;
     }
@@ -114,7 +119,7 @@ void loop () {
             if (isFileOk(filename)){
               Serial.println("File had the right format");
 
-              //Compute the standard dev
+              //Compute the standard deviation of heart data
               computedSdDev = computeSdDev(filename);
               Serial.println("Standard Dev");
               Serial.println(computedSdDev);
@@ -147,7 +152,7 @@ void loop () {
     Serial.println("Coke to Pour in ml: ");
     Serial.println(cokeToPour);
     Serial.println("");
-
+ 
     float rumSeconds = rumToPour / rumFlow;
     float cokeSeconds = cokeToPour / cokeFlow;
 
@@ -171,7 +176,8 @@ void loop () {
     lastDate = now;
 }
 
-
+//Check if the file is in the Right format
+//by assessing if the first line is "ArduinoHeartData"
 boolean isFileOk (char* filename){
   File myFile = SD.open(filename);
   char targetWord[16] = {'A','r','d','u','i','n','o','H','e','a','r','t','D','a','t','a'};
@@ -188,6 +194,7 @@ boolean isFileOk (char* filename){
   return true;
 }
 
+//Skip one line of the file while reading it
 void skipLine(File myFile){
   char cur = 'm';
   while ( cur != '\n'){
@@ -195,6 +202,7 @@ void skipLine(File myFile){
   }
 }
 
+//Return the line read as a float
 float getFloatOnLine(File myFile){
   String floatString;
   char cur = 'm';
@@ -213,6 +221,7 @@ float getFloatOnLine(File myFile){
   return floatString.toFloat();
 }
 
+// Computed the standard deviiation of the data
 // Code inspired from https://www.programiz.com/cpp-programming/examples/standard-deviation
 float computeSdDev(char* filename){
 
