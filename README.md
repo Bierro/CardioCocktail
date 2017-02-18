@@ -72,7 +72,7 @@ On this Arduino, I run a code which:
 * The deviation computed is linearly converted into a percentage of rum in the drink
 * Based on the global parameters of the experience (flows of liquids, desired volume of cocktail...), I compute the amount of time each solenoid valve should open to let the liquid flow and have them open.
 
-### Fabrication & electronics
+### Fabrication
 
 For my machine I imagined a box with three different floors:
 * On the top one lie the electronics of the machine. The major components of it are two solenoid valves which control whether we let the rum and coke flow. More details about the circuit can be found in the next section
